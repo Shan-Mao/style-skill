@@ -1,6 +1,6 @@
 [package]
 name = "style-skill"
-version = "0.1.0"
+version = "0.1.1"
 description = "Style Skill — 从参考截图提取设计语言并生成 Agent Skill"
 edition = "2021"
 

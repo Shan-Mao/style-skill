@@ -83,8 +83,9 @@ class OnnxDetector:
         r = min(self.imgsz / ih, self.imgsz / iw)
         # LetterBox(scaleup=True)：允许放大
         rh, rw = round(ih * r), round(iw * r)
-        nh = round(rh / self.stride) * self.stride
-        nw = round(rw / self.stride) * self.stride
+        # 向上对齐到 stride 倍数，确保画布不会小于缩放后的图像。
+        nh = int(np.ceil(rh / self.stride)) * self.stride
+        nw = int(np.ceil(rw / self.stride)) * self.stride
         top = round((nh - rh) / 2 - 0.1)
         left = round((nw - rw) / 2 - 0.1)
         canvas = np.full((nh, nw, 3), 114, dtype=np.uint8)
