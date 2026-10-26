@@ -1,0 +1,51 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Python 推理环境与模型权重（不入库）
+.venv/
+__pycache__/
+inference/models/
+*.onnx
+*.pt
+
+# Rust / Tauri 构建产物
+src-tauri/target/
+src-tauri/gen/
+
+# 其他模型权重格式（ScreenVLM 等）
+*.safetensors
+
+# ScreenVLM 分词器资产（Apache-2.0 上游资产，不入首次公开仓库）
+poc/screenvlm-poc/model/tokenizer.json
+poc/screenvlm-poc/model/vocab.json
+poc/screenvlm-poc/model/merges.txt
+
+# 实验运行输出（含机器路径与时间戳痕迹）
+poc/screenparser-poc/out/
+poc/screenvlm-poc/out/
+poc/onnx-poc/*.json
+
+# 测试截图（第三方网站 UI，暂不纳入首次公开提交；本地保留）
+poc/screenparser-poc/test-images/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

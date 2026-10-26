@@ -1,0 +1,60 @@
+:root {
+  --bg: #f6f6f8;
+  --surface: #ffffff;
+  --surface-2: #fbfbfc;
+  --border: #e6e6ea;
+  --border-strong: #d7d7de;
+  --text-1: #1d1d23;
+  --text-2: #55555e;
+  --text-3: #8e8e98;
+  --accent: #7c3aed;
+  --accent-strong: #6d28d9;
+  --accent-soft: #f2ecfd;
+
+  --radius-sm: 6px;
+  --radius-lg: 14px;
+
+  --sans: system-ui, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p,
+ol,
+ul {
+  margin: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
