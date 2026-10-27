@@ -1,10 +1,15 @@
-# Style Skill
+| ![Style Skill](docs/assets/hero.jpg) | <h1>Style Skill</h1><p>从参考截图提取 Web UI 视觉设计语言，并生成可交付给 AI 编程助手使用的 Agent Skill。</p><p>核心原则：算法只做确定性测量，不猜测设计意图。所有图像特征由浏览器本地计算（无 AI API、无云端服务、不上传图片）；“这个颜色是什么用途、重要不重要”由用户在规则编辑器中人工确认；只有已确认的规则才会进入最终导出物。</p> |
+| --- | --- |
 
-从参考截图提取 Web UI 视觉设计语言，并生成可交付给 AI 编程助手使用的 Agent Skill。
+## 界面截图
 
-核心原则：**算法只做确定性测量，不猜测设计意图**。所有图像特征由浏览器本地
-计算（无 AI API、无云端服务、不上传图片）；"这个颜色是什么用途、重要不重要"
-由用户在规则编辑器中人工确认；只有已确认的规则才会进入最终导出物。
+| 参考素材分析 | 设计规则 |
+| --- | --- |
+| ![参考素材分析：本地模型识别 UI 元素](docs/screenshots/01-assets.png) | ![设计规则：逐条确认或忽略](docs/screenshots/02-rules.png) |
+
+| Skill 生成 | 项目首页 |
+| --- | --- |
+| ![Skill 生成：令牌与文件预览](docs/screenshots/03-skill.png) | ![项目首页](docs/screenshots/04-projects.png) |
 
 ## 主要功能
 
@@ -27,7 +32,7 @@
 ## 技术栈
 
 - 前端：Vite + React 19 + TypeScript，原生 CSS（无 UI 框架）
-- 桌面：Tauri 2（脚手架就绪，见 `docs/tauri-integration-plan.md`）
+- 桌面：Tauri 2（Windows 便携版）
 - 本地推理：Python + ONNX Runtime（默认）/ PyTorch + Ultralytics（回退）
 
 ## 安装与开发启动
@@ -97,13 +102,12 @@ PyTorch 模型的 SHA-256 请在下载后与 Hugging Face 官方发布核对（�
   圆角、字体、阴影等无法从检测框得到的属性。
 - 对齐/尺寸一致性等结构模式为经验阈值判定，检测结果均为**模型推断证据**，
   需人工确认；不要把检测结果直接当作 DOM 事实或设计规范。
-- 图片与规则状态保存在内存中，刷新页面即丢失（尚未实现持久化）。
+- 图片与规则状态保存在内存中，刷新页面即丢失。
 - 推理服务在 Windows 下开发；跨平台运行未验证。
-- 桌面安装包（NSIS）尚未制作。
 
 ## 文档
 
-- Tauri 桌面化方案：`docs/tauri-integration-plan.md`
+- Tauri 桌面集成说明：`docs/tauri-integration-plan.md`
 - ONNX 可行性 PoC（双后端对比方法与数据）：`poc/onnx-poc/README.md`
 
 ## 许可证

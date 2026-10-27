@@ -1,6 +1,7 @@
 import type { ComponentType } from 'react'
 import type { IconProps } from './icons'
-import { BrandMark, FolderIcon, ImageIcon, PackageIcon, SlidersIcon } from './icons'
+import { FolderIcon, ImageIcon, PackageIcon, SlidersIcon } from './icons'
+import brandLogo from '../assets/styleskill-logo.png'
 
 export type ViewId = 'projects' | 'assets' | 'editor' | 'skill'
 
@@ -26,7 +27,7 @@ export function Sidebar({ active, onSelect }: SidebarProps) {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
-        <BrandMark className="brand-mark" size={22} />
+        <img className="brand-logo" src={brandLogo} alt="" width={22} height={22} />
         <span className="brand-name">Style Skill</span>
       </div>
       <nav className="sidebar-nav" aria-label="功能导航">
@@ -43,7 +44,7 @@ export function Sidebar({ active, onSelect }: SidebarProps) {
           </button>
         ))}
       </nav>
-      <p className="sidebar-footer">设计令牌已就绪 · SKILL.md 待实现</p>
+      <p className="sidebar-footer">设计令牌已就绪</p>
     </aside>
   )
 }

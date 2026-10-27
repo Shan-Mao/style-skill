@@ -1,15 +1,21 @@
 :root {
-  --bg: #f6f6f8;
+  /* 依据 style-skill.md：页面背景、主色与正文色为已确认令牌 */
+  --bg: #f5f6f6;
   --surface: #ffffff;
-  --surface-2: #fbfbfc;
-  --border: #e6e6ea;
-  --border-strong: #d7d7de;
-  --text-1: #1d1d23;
-  --text-2: #55555e;
-  --text-3: #8e8e98;
-  --accent: #7c3aed;
-  --accent-strong: #6d28d9;
-  --accent-soft: #f2ecfd;
+  --surface-2: #f7f7f7;
+  --border: #dcdcdc;
+  --border-strong: #bdbdbd;
+  --text-1: #1e1e21;
+  --text-2: #4b4b52;
+  --text-3: #76767e;
+  --accent: #f7f609;
+  --accent-strong: #1e1e21;
+  --accent-soft: #fbfbd8;
+
+  /* 辅助组件的硬边偏移阴影（局部使用，不普及到所有容器） */
+  --ink: #1a1a1a;
+  --shadow-hard: 4px 4px 0 var(--ink);
+  --shadow-hard-sm: 3px 3px 0 var(--ink);
 
   --radius-sm: 6px;
   --radius-lg: 14px;

@@ -1,0 +1,229 @@
+/* ===== 视觉规范覆盖（依据 style-skill.md）=====
+   仅调整颜色、边框、阴影与焦点表现；不改变布局、尺寸与文案。
+   主风格：页面 #F5F6F6 / 主色 #F7F609 / 正文 #1E1E21。
+   辅助风格：仅在按钮、输入框、选中态等局部使用硬边偏移阴影。 */
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+/* 键盘焦点统一为清晰的墨色描边 */
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* ---- 左侧导航 ---- */
+
+.nav-item {
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.nav-item:hover {
+  background: #ededed;
+  color: var(--ink);
+}
+
+.nav-item.is-active {
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+}
+
+.nav-item:focus-visible {
+  outline-offset: -2px;
+}
+
+.brand-logo {
+  width: 22px;
+  height: 22px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* ---- 按钮：主色黄底 + 墨色文字；局部硬边阴影 ---- */
+
+.btn {
+  transition: background-color 0.12s ease, color 0.12s ease,
+    box-shadow 0.12s ease, transform 0.12s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  box-shadow: var(--shadow-hard);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  color: var(--ink);
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.btn-primary:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.btn-primary:disabled {
+  opacity: 0.45;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-soft);
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.btn-secondary:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+/* ---- 卡片与导入区：保留原有边界结构，仅强化墨色轮廓 ---- */
+
+.workflow-steps {
+  border: 1px solid var(--ink);
+}
+
+.import-zone:hover,
+.import-zone:focus-visible,
+.import-zone.is-dragging {
+  border-color: var(--ink);
+}
+
+.import-zone.is-dragging {
+  background: var(--accent-soft);
+}
+
+.import-zone:focus-visible {
+  outline: 2px solid var(--ink);
+}
+
+/* ---- 选中态：墨色描边 + 轻量硬边阴影 ---- */
+
+.asset-thumb.is-selected .asset-select {
+  border-color: var(--ink);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.asset-select:focus-visible {
+  outline: 2px solid var(--ink);
+}
+
+.asset-remove:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* ---- 筛选与标签：主色仅作浅底强调 ---- */
+
+.filter-chip.is-active {
+  border-color: var(--ink);
+}
+
+.report-tab.is-active {
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+
+.rule-tag.is-inferred,
+.reading-badge.is-inferred {
+  border-color: var(--ink);
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.warning-note,
+.feature-warn {
+  border: 1px solid var(--ink);
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+/* ---- 表单控件：默认克制，聚焦时给出明确反馈 ---- */
+
+.hex-input,
+.rule-textarea,
+.manual-add select,
+.manual-add input,
+.color-edit input[type='color'] {
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-1);
+}
+
+.hex-input:focus-visible,
+.rule-textarea:focus-visible,
+.manual-add select:focus-visible,
+.manual-add input:focus-visible,
+.color-edit input[type='color']:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+  box-shadow: var(--shadow-hard-sm);
+}
+
+/* ---- 文本按钮与候选色块 ---- */
+
+.link-btn {
+  color: var(--ink);
+}
+
+.link-btn:hover {
+  background: var(--accent-soft);
+}
+
+.evidence-chip:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.cand-swatch:hover {
+  outline: 2px solid var(--ink);
+}
+
+/* ---- 数据可视化：主色用于色带，墨色用于数值条，保证可读性 ---- */
+
+.stat-fill,
+.orient-fill {
+  background: var(--ink);
+}
+
+.orient-fill {
+  opacity: 1;
+}
+
+.hist-mean {
+  stroke: var(--ink);
+}
+
+/* ---- 识别框：主色描边 + 墨色外圈，深浅底图均可辨识 ---- */
+
+.det-box {
+  border: 1.5px solid var(--accent);
+  box-shadow: 0 0 0 1px rgba(26, 26, 26, 0.7);
+}
+
+.det-box:hover {
+  background: rgba(247, 246, 9, 0.18);
+}
+
+/* ---- 代码预览：墨色底，与整体配色统一 ---- */
+
+.code-block {
+  background: var(--ink);
+  color: var(--bg);
+}

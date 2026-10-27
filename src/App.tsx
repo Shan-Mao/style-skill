@@ -14,6 +14,7 @@ import { useDetections } from './hooks/useDetections'
 import { useImageLibrary } from './hooks/useImageLibrary'
 import { initTauriBridge } from './lib/tauriBridge'
 import './App.css'
+import './styles/visual-theme.css'
 
 function App() {
   const [view, setView] = useState<ViewId>('projects')
